@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { useDebounce } from 'use-debounce';
+import Image from 'next/image';
 
 import axios from 'axios';
 
@@ -19,7 +20,7 @@ const Home = () => {
 						width: '100%',
 					}}
 				>
-					<img style={{ height: '48px' }} src={result.icon} />
+					<Image src={result.icon} height={48} width={48} />
 					<div style={{ marginLeft: '12px', display: 'flex', width: '100%' }}>
 						<div>
 							<div>{result.title}</div>

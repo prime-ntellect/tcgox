@@ -13,6 +13,9 @@ const nextConfig = {
 		dest: 'public',
 	},
 	workerLoaderOptions: {},
+	images: {
+		domains: ['52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com']
+	}
 };
 
 module.exports = withWorkers({
