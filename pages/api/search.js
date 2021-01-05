@@ -3,7 +3,7 @@ const axios = require('axios');
 const endpoint = async (req, res) => {
 	const search = req.query.search;
 	const [r1, r2] = await Promise.all([
-		axios.get(`http://trading-cards.vercel.app/api/fabdb?search=${search}`),
+		axios.get(`https://trading-cards.vercel.app/api/fabdb?search=${search}`),
 		axios.get(`https://trading-cards.vercel.app/api/trollandtoad?search=${search}`),
 	]);
 
