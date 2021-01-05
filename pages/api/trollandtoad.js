@@ -18,10 +18,7 @@ const endpoint = async (req, res) => {
 			.children()
 			.map(function () {
 				const d = $(this);
-				const icon = d
-					.children()
-					.find('.productImage')
-					.attr('src').replace('small', 'pictures');
+				const icon = d.children().find('.productImage').attr('src').replace('small', 'pictures');
 				const title = d.children().find('.product-info .card-text strong').text();
 				d.children()
 					.find('.buying-options-table .row')
@@ -45,6 +42,7 @@ const endpoint = async (req, res) => {
 					});
 			});
 
+		res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
 		return res.status(200).send(response);
 	} catch (e) {
 		console.log(e);
