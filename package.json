@@ -1,0 +1,52 @@
+{
+  "name": "sycamore-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "@zeit/next-workers": "^1.0.0",
+    "apollo3-cache-persist": "^0.9.1",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "comlink": "^4.3.0",
+    "ebay-node-api": "^2.8.9",
+    "graphql": "^15.4.0",
+    "idb-keyval": "^3.2.0",
+    "js-beautify": "^1.13.0",
+    "next": "10.0.4",
+    "next-pwa": "^5.0.0",
+    "react": "^0.0.0-experimental-3310209d0",
+    "react-dom": "^0.0.0-experimental-3310209d0",
+    "use-debounce": "^5.2.0",
+    "worker-loader": "^3.0.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "./node_modules/.bin/eslint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
