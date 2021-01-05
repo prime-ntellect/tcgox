@@ -40,7 +40,7 @@ const Home = () => {
 	const handleChangeSearch = React.useCallback((evt) => {
 		setSearch(evt.target.value);
 	}, []);
-	const [searchTerm] = useDebounce(search, 500);
+	const [searchTerm] = useDebounce(search, 1000);
 
 	React.useEffect(() => {
 		async function fetch() {
