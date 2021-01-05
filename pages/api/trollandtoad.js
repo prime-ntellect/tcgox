@@ -46,7 +46,7 @@ const endpoint = async (req, res) => {
 		return res.status(200).send(response);
 	} catch (e) {
 		console.log(e);
-		return res.status(500).send('');
+		return res.status(200).send([]);
 	}
 };
 

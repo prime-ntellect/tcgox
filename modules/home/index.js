@@ -25,6 +25,7 @@ const Home = () => {
 						<div>
 							<div>{result.title}</div>
 							<div>{result.condition}</div>
+							<a style={{ color: 'blue' }} href={result.storeUrl} target="_blank">{result.store}</a>
 						</div>
 						<div style={{ flexGrow: '1' }} />
 						<div>{result.price}</div>
@@ -47,7 +48,7 @@ const Home = () => {
 			setLoading(true);
 
 			try {
-				const { data } = await axios.get(`/api/trollandtoad?search=${searchTerm}`);
+				const { data } = await axios.get(`/api/search?search=${searchTerm}`);
 				setResults(data);
 			} catch (e) {
 				setResults([]);
