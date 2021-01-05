@@ -16,7 +16,7 @@ const HomePage = () => {
 				<meta property="og:image:height" content="800" />
 				<meta property="og:url" content="https://tcgox.app" />
 				<meta property="twitter:card" content="summary_large_image" />
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="https://tcgox.app/favicon.ico" />
 			</Head>
 			<Module />
 		</>
