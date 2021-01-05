@@ -7,7 +7,7 @@ Trade cards for bitcoin
 First, clone the repo and change directories to the project
 
 ```bash
-git clone git@github.com:twetch-inc/trading-cards.git
+git clone https://github.com/twetch-inc/trading-cards.git
 cd trading-cards
 ```
 
