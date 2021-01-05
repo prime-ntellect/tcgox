@@ -7,13 +7,9 @@ const endpoint = async (req, res) => {
 	try {
 		const words = (req.query.search || '').toLowerCase().split(' ').join('+');
 
-		console.log('here', words);
-
 		const { data } = await axios.get(
 			`https://www.trollandtoad.com/category.php?items-pp=240&search-words=${words}&selected-cat=0&sort-order=Relevance&page-no=1&view=list&subproduct=0`
 		);
-		console.log({ data });
-
 		const $ = cheerio.load(data);
 		const response = [];
 		const results = $('.result-container').children();

@@ -29,8 +29,6 @@ const endpoint = async (req, res) => {
 			})
 		);
 
-		console.log({ results });
-
 		res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
 		return res.status(200).send(results);
 	} catch (e) {
