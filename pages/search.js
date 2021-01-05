@@ -1,5 +1,4 @@
 import Module from 'app-modules/search';
-import withApollo from 'app-components/with-apollo';
 import Head from 'next/head';
 
 const HomePage = () => {
@@ -24,10 +23,10 @@ const HomePage = () => {
 	);
 };
 
-export default withApollo(HomePage);
+export default HomePage;
 
 export async function getStaticProps(context) {
 	return {
-		props: {}
+		props: {},
 	};
 }
