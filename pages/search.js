@@ -24,9 +24,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-export async function getStaticProps(context) {
-	return {
-		props: {},
-	};
-}
