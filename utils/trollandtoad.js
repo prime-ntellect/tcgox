@@ -5,7 +5,7 @@ const parse = async (search) => {
 	console.log('fetching....');
 	const words = (search || '').toLowerCase().split(' ').join('+');
 	const { data } = await axios.get(
-		`https://www.trollandtoad.com/category.php?items-pp=60&search-words=${words}&selected-cat=0&sort-order=Relevance&page-no=1&view=list&subproduct=0`
+		`https://www.trollandtoad.com/category.php?items-pp=60&search-words=${words}&selected-cat=0&sort-order=H-L&page-no=1&view=list&subproduct=0`
 	);
 	console.log('data fetched, processing...');
 
