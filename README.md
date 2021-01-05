@@ -4,10 +4,11 @@ Trade cards for bitcoin
 
 ## Getting Started
 
-First, clone the repo
+First, clone the repo and change directories to the project
 
 ```bash
 git clone git@github.com:twetch-inc/trading-cards.git
+cd trading-cards
 ```
 
 Then, install node modules
