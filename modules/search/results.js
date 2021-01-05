@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import queryParser from 'app-utils/query-parser';
 
+import trollandtoad from 'app-utils/trollandtoad';
 import result from './result';
 
 const Results = (props) => {

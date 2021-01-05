@@ -25,3 +25,9 @@ const HomePage = () => {
 };
 
 export default withApollo(HomePage);
+
+export async function getStaticProps(context) {
+	return {
+		props: {}
+	};
+}
