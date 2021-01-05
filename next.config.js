@@ -1,5 +1,3 @@
-const withPwa = require('next-pwa');
-const withWorkers = require('@zeit/next-workers');
 const path = require('path');
 
 const nextConfig = {
@@ -21,7 +19,7 @@ const nextConfig = {
 	},
 };
 
-module.exports = withWorkers({
+module.exports = {
 	...nextConfig,
 	webpack(config, { dev }) {
 		if (dev) {
@@ -43,4 +41,4 @@ module.exports = withWorkers({
 
 		return config;
 	},
-});
+};

@@ -1,30 +1,20 @@
 {
-  "name": "sycamore-next",
-  "version": "0.1.0",
+  "name": "tcgox", "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "package": "./scripts/package.sh"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.6",
-    "@zeit/next-workers": "^1.0.0",
-    "apollo3-cache-persist": "^0.9.1",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.5",
-    "comlink": "^4.3.0",
-    "ebay-node-api": "^2.8.9",
-    "graphql": "^15.4.0",
-    "idb-keyval": "^3.2.0",
-    "js-beautify": "^1.13.0",
     "next": "10.0.4",
-    "next-pwa": "^5.0.0",
     "react": "^0.0.0-experimental-3310209d0",
     "react-dom": "^0.0.0-experimental-3310209d0",
     "sharp": "^0.27.0",
-    "use-debounce": "^5.2.0",
-    "worker-loader": "^3.0.6"
+    "use-debounce": "^5.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -49,5 +39,14 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "bin": "server.js",
+  "pkg": {
+    "assets": [
+      ".next/**/*"
+    ],
+    "scripts": [
+      ".next/dist/**/*.js"
+    ]
   }
 }
