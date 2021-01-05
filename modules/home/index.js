@@ -5,9 +5,19 @@ import Image from 'next/image';
 
 import axios from 'axios';
 
+import { useRouter } from 'next/router';
+
+const parse = (search) => {
+	return search
+		.slice(1)
+		.split('&')
+		.reduce((a, e) => ({ ...a, [e.split('=')[0]]: e.split('=')[1] }), {});
+};
+
 import 'app-styles/Home.module.css';
 
 const Home = () => {
+	const router = useRouter();
 	const renderResult = React.useCallback((result, index) => {
 		return (
 			<a href={result.url} target="_blank">
@@ -25,7 +35,9 @@ const Home = () => {
 						<div>
 							<div>{result.title}</div>
 							<div>{result.condition}</div>
-							<a style={{ color: 'blue' }} href={result.storeUrl} target="_blank">{result.store}</a>
+							<a style={{ color: 'blue' }} href={result.storeUrl} target="_blank">
+								{result.store}
+							</a>
 						</div>
 						<div style={{ flexGrow: '1' }} />
 						<div>{result.price}</div>
@@ -36,7 +48,7 @@ const Home = () => {
 	}, []);
 
 	const [loading, setLoading] = React.useState(false);
-	const [search, setSearch] = React.useState('Alakazam base holo');
+	const [search, setSearch] = React.useState(parse(router.asPath.slice(1)).search || '');
 	const [results, setResults] = React.useState([]);
 	const handleChangeSearch = React.useCallback((evt) => {
 		setSearch(evt.target.value);
@@ -46,10 +58,13 @@ const Home = () => {
 	React.useEffect(() => {
 		async function fetch() {
 			setLoading(true);
+			router.replace(`/?search=${searchTerm}`);
 
 			try {
-				const { data } = await axios.get(`/api/search?search=${searchTerm}`);
-				setResults(data);
+				if (searchTerm) {
+					const { data } = await axios.get(`/api/search?search=${searchTerm}`);
+					setResults(data);
+				}
 			} catch (e) {
 				setResults([]);
 				console.log(e);
