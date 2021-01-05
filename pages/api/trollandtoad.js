@@ -21,7 +21,7 @@ const endpoint = async (req, res) => {
 				const icon = d
 					.children()
 					.find('.productImage')
-					.attr('src');
+					.attr('src').replace('small', 'pictures');
 				const title = d.children().find('.product-info .card-text strong').text();
 				d.children()
 					.find('.buying-options-table .row')

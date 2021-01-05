@@ -14,13 +14,13 @@ const Home = () => {
 				<div
 					key={index}
 					style={{
+						padding: '12px',
 						display: 'flex',
-						marginBottom: '24px',
 						borderBottom: '1px solid rgba(0, 0, 0, .1)',
 						width: '100%',
 					}}
 				>
-					<Image src={result.icon} height={48} width={48} />
+					<Image src={result.icon} height={64} width={45} />
 					<div style={{ marginLeft: '12px', display: 'flex', width: '100%' }}>
 						<div>
 							<div>{result.title}</div>
