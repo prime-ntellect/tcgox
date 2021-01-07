@@ -1,5 +1,4 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
 
 const endpoint = async (req, res) => {
 	try {
@@ -19,10 +18,10 @@ const endpoint = async (req, res) => {
 					results.push({
 						url: `https://fabdb.net/cards/${each.identifier}`,
 						title: each.name,
-						condition: `${e.variant} Rarity: ${each.rarity}`,
+						description: `${e.variant} Rarity: ${each.rarity}`,
 						icon: `https://fabdb2.imgix.net/cards/${type}/${num}.png?w=450&fit=clip&auto=compress`,
 						price: `$${e.price} ${e.currency}`,
-						store: e.store.name,
+						store: 'fabdb',
 						storeUrl: `${e.domain}${e.path}`,
 					});
 				});

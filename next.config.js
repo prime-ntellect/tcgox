@@ -1,4 +1,5 @@
 const path = require('path');
+const withWorkers = require('@zeit/next-workers');
 
 const nextConfig = {
 	experimental: {
@@ -15,11 +16,16 @@ const nextConfig = {
 		domains: [
 			'52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com',
 			'fabdb2.imgix.net',
+			'thumbs1.ebaystatic.com',
+			'thumbs2.ebaystatic.com',
+			'thumbs3.ebaystatic.com',
+			'thumbs4.ebaystatic.com',
+			'tcgplayer-cdn.tcgplayer.com',
 		],
 	},
 };
 
-module.exports = {
+module.exports = withWorkers({
 	...nextConfig,
 	webpack(config, { dev }) {
 		if (dev) {
@@ -41,4 +47,4 @@ module.exports = {
 
 		return config;
 	},
-};
+});

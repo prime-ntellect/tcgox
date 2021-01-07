@@ -1,13 +1,13 @@
 # TCGOX
 
-Trade cards for bitcoin
+Trading Card Game Online Exchange
 
 ## Getting Started
 
 First, clone the repo and change directories to the project
 
 ```bash
-git clone https://github.com/twetch-inc/trading-cards.git
+git clone https://github.com/prime-ntellect/tcgox.git
 cd trading-cards
 ```
 
