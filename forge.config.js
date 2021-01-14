@@ -19,7 +19,7 @@ module.exports = {
 		{
 			name: '@electron-forge/maker-dmg',
 			config: {
-				name: 'TCG0X-Installer',
+				name: 'tcgox-installer',
 				icon: './public/AppIcon.icns',
 				format: 'ULFO',
 			},
