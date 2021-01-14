@@ -2,6 +2,7 @@ import React from 'react';
 import Result from './result';
 import { useRouter } from 'next/router';
 import queryParser from 'app-utils/query-parser';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import worker from 'app-utils/worker';
 
@@ -36,9 +37,23 @@ const Results = (props) => {
 
 	return (
 		<>
-			{loading && 'loading'}
-			{!loading && !results.length && 'Search for something'}
-			{!loading && results.map(renderResult)}
+			{loading && (
+				<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<CircularProgress />
+				</div>
+			)}
+			{!loading && !!results.length && (
+				<div
+					style={{
+						background: '#F3F2F8',
+						borderRadius: '32px',
+						padding: '16px',
+						position: 'relative',
+					}}
+				>
+					{results.map(renderResult)}
+				</div>
+			)}
 		</>
 	);
 };

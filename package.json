@@ -1,8 +1,9 @@
 {
   "name": "tcgox",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "main": "main.js",
+  "repository": "https://github.com/metamorphosis-of-prime-intellect/tcgox.app.git",
   "scripts": {
     "dev": "next dev",
     "dev:electron": "electron .",
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "@electron-forge/publisher-github": "^6.0.0-beta.54",
+    "@material-ui/core": "^4.11.2",
     "@zeit/next-workers": "^1.0.0",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.5",
@@ -22,15 +24,19 @@
     "ebay-node-api": "^2.8.9",
     "electron-squirrel-startup": "^1.0.0",
     "next": "10.0.4",
+    "puppeteer": "^5.5.0",
+    "puppeteer-core": "^5.5.0",
     "react": "^0.0.0-experimental-3310209d0",
     "react-dom": "^0.0.0-experimental-3310209d0",
     "sharp": "^0.27.0",
+    "update-electron-app": "^2.0.1",
     "use-debounce": "^5.2.0",
     "worker-loader": "^3.0.7"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-dmg": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "babel-eslint": "^10.1.0",
     "electron": "^11.1.1",
     "eslint": "^7.16.0",

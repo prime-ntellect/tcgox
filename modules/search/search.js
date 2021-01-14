@@ -13,31 +13,47 @@ const Search = () => {
 	const [searchTerm] = useDebounce(search, 1000);
 
 	React.useEffect(() => {
-		if (searchTerm) {
+		if (searchTerm && searchTerm !== 'undefined') {
 			router.replace(`/search?search=${searchTerm}`);
 		}
 	}, [searchTerm, router]);
 
 	return (
-		<input
-			autoFocus
-			style={{
-				height: '48px',
-				fontSize: '20px',
-				lineHeight: '48px',
-				padding: '0 16px',
-				width: '600px',
-				maxWidth: '100%',
-				borderRadius: '36px',
-				margin: '24px auto',
-				display: 'block',
-				background: '#F3F2F8',
-				border: 'none',
-				fontWeight: 'bold',
-			}}
-			value={search}
-			onChange={handleChangeSearch}
-		/>
+		<div style={{ position: 'sticky', top: '0', zIndex: '2', background: 'white' }}>
+			<div style={{ height: '24px', background: 'white' }} />
+			<div
+				style={{
+					padding: '10px 24px',
+					width: '100%',
+					maxWidth: '100%',
+					borderRadius: '36px',
+					margin: '0 auto',
+					background: '#F2F2F7',
+					display: 'flex',
+				}}
+			>
+				{/*<img
+				href=""
+				style={{ marginRight: '24px', height: '18px', width: '18px', marginTop: '5px' }}
+			/>*/}
+				<input
+					autoFocus
+					style={{
+						fontSize: '18px',
+						fontWeight: 500,
+						lineHeight: '28px',
+						padding: 0,
+						background: 'transparent',
+						border: 'none',
+						flexGrow: '1',
+					}}
+					placeholder="search"
+					value={search}
+					onChange={handleChangeSearch}
+				/>
+			</div>
+			<div style={{ height: '24px', background: 'white' }} />
+		</div>
 	);
 };
 

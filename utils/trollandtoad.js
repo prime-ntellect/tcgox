@@ -21,7 +21,6 @@ const parse = async (search) => {
 				.map(function () {
 					const e = $(this);
 					const description = e.find('div:nth-child(2) a').text();
-					const url = e.find('div:nth-child(2) a').attr('href');
 					const price = e.find('div:nth-child(4)').text();
 
 					if (!description || !price) {
@@ -33,7 +32,7 @@ const parse = async (search) => {
 						title,
 						icon,
 						description,
-						url: `https://trollandtoad.com/${url}`,
+						url: `https://trollandtoad.com/${e.find('div:nth-child(2) a').attr('href')}`,
 						price,
 					});
 				});

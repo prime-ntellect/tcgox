@@ -10,6 +10,11 @@ const AppWorker = {
 		return fetch(...args);
 	},
 	search: async (searchTerm) => {
+		const { data: exchangeRateData } = await axios.get(
+			'https://cloud-functions.twetch.app/api/exchange-rate'
+		);
+		const exchangeRate = exchangeRateData.price;
+
 		const responses = await Promise.all(
 			dataSources.map(async (e) => {
 				try {
@@ -22,7 +27,15 @@ const AppWorker = {
 		);
 		const results = responses
 			.reduce((a, e) => a.concat(e), [])
-			.sort((a, b) => parseFloat(b.price.match(/[\d\.]+/)) - parseFloat(a.price.match(/[\d\.]+/)));
+			.map((e) => ({
+				...e,
+				bsvPrice: (parseFloat(e.price.replace(',', '').match(/[\d\.]+/)) / exchangeRate).toFixed(8),
+			}))
+			.sort(
+				(a, b) =>
+					parseFloat(b.price.replace(',', '').match(/[\d\.]+/)) -
+					parseFloat(a.price.replace(',', '').match(/[\d\.]+/))
+			);
 
 		return results;
 	},

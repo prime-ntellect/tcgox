@@ -21,6 +21,7 @@ const nextConfig = {
 			'thumbs3.ebaystatic.com',
 			'thumbs4.ebaystatic.com',
 			'tcgplayer-cdn.tcgplayer.com',
+			'i.ebayimg.com',
 		],
 	},
 };

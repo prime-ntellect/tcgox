@@ -3,7 +3,7 @@ const { parse } = require('url');
 const next = require('next');
 const nextConfig = require('./next.config');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = parseInt(process.env.PORT, 10) || 21380;
 const dev = false;
 const app = next({ dev, dir: __dirname, conf: nextConfig });
 const handle = app.getRequestHandler();
