@@ -19,7 +19,7 @@ const endpoint = async (req, res) => {
 						url: `https://fabdb.net/cards/${each.identifier}`,
 						title: each.name,
 						description: `${e.variant} Rarity: ${each.rarity}`,
-						icon: `https://fabdb2.imgix.net/cards/${type}/${num}.png?w=450&fit=clip&auto=compress`,
+						icon: cardData.image,
 						price: `$${e.price} ${e.currency}`,
 						store: 'fabdb',
 						storeUrl: `${e.domain}${e.path}`,

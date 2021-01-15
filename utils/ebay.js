@@ -1,5 +1,5 @@
 import cheerio from 'cheerio';
-import puppeteer from 'puppeteer-electron';
+import puppeteer from 'puppeteer';
 
 const parse = async (searchTerm) => {
 	const browser = await puppeteer.launch();

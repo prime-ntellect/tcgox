@@ -19,7 +19,7 @@ module.exports = {
 		{
 			name: '@electron-forge/maker-dmg',
 			config: {
-				name: 'tcgox-installer',
+				name: 'TCGOX-installer',
 				icon: './public/AppIcon.icns',
 				format: 'ULFO',
 			},
@@ -36,7 +36,7 @@ module.exports = {
 				authToken: process.env.GITHUB_TOKKEN,
 				repository: {
 					owner: 'metamorphosis-of-prime-intellect',
-					name: 'tcgox',
+					name: 'TCGOX',
 				},
 				prerelease: true,
 			},
