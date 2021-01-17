@@ -5,3 +5,4 @@ WORKDIR /home/node/app
 COPY . . 
 RUN npm install
 EXPOSE 21380
+ENTRYPOINT node server.js
