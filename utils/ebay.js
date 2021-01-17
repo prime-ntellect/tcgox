@@ -2,7 +2,7 @@ import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 
 const parse = async (searchTerm) => {
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 	const pages = await browser.pages();
 	const [page] = pages;
 
