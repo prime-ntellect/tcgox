@@ -76,7 +76,7 @@ const AppWorker = {
 				const currency = Object.keys(forexPrices).find((c) => price.includes(c)) || 'USD';
 
 				price = (
-					parseFloat(e.price.replace(',', '').match(/[\d\.]+/)) * forexPrices[currency]
+					parseFloat(e.price.replace(',', '').match(/[\d\.]+/)) / forexPrices[currency]
 				).toFixed(2);
 
 				return {
