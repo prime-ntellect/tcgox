@@ -1,12 +1,14 @@
 import React from 'react';
-import Result from './result';
+import Result from '../result';
 import { useRouter } from 'next/router';
 import queryParser from 'app-utils/query-parser';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import useStyles from './styles';
 import worker from 'app-utils/worker';
 
 const Results = (props) => {
+	const classes = useStyles()();
 	const router = useRouter();
 	const [loading, setLoading] = React.useState(false);
 	const [results, setResults] = React.useState([]);
@@ -38,21 +40,12 @@ const Results = (props) => {
 	return (
 		<>
 			{loading && (
-				<div style={{ display: 'flex', justifyContent: 'center' }}>
+				<div className={classes.loading}>
 					<CircularProgress />
 				</div>
 			)}
 			{!loading && !!results.length && (
-				<div
-					style={{
-						background: '#F3F2F8',
-						borderRadius: '32px',
-						padding: '16px',
-						position: 'relative',
-					}}
-				>
-					{results.map(renderResult)}
-				</div>
+				<div className={classes.root}>{results.map(renderResult)}</div>
 			)}
 		</>
 	);

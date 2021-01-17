@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <defs>
+        <radialGradient cx="100%" cy="100%" fx="100%" fy="100%" r="100%" gradientTransform="translate(1.000000,1.000000),scale(0.711111,1.000000),rotate(90.000000),translate(-1.000000,-1.000000)" id="radialGradient-1">
+            <stop stop-color="#0277B6" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="100%" cy="100%" fx="100%" fy="100%" r="100%" gradientTransform="translate(1.000000,1.000000),scale(0.711111,1.000000),rotate(90.000000),translate(-1.000000,-1.000000)" id="radialGradient-2">
+            <stop stop-color="#02B3D8" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sold" transform="translate(-115.000000, -40.000000)">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="1440" height="1024"></rect>
+            <rect id="Rectangle" fill="url(#radialGradient-1)" x="0" y="0" width="1440" height="1024"></rect>
+            <rect id="Rectangle" fill="url(#radialGradient-2)" x="0" y="0" width="1440" height="1024"></rect>
+            <g id="Group-19" transform="translate(90.000000, 24.000000)">
+                <path d="M0,25 C0,11.1928813 11.189906,0 24.995949,0 L849.004051,0 C862.808932,0 874,11.1898454 874,25 L874,25 C874,38.8071187 862.810094,50 849.004051,50 L24.995949,50 C11.1910676,50 0,38.8101546 0,25 L0,25 Z" id="NavBar" fill="#F2F2F7"></path>
+                <path d="M32.3510186,30.5628547 C33.9474055,30.5628547 35.4195161,30.051539 36.6239862,29.1993623 L41.1550404,33.6875244 C41.3653392,33.895836 41.6425529,34 41.9388935,34 C42.5602947,34 43,33.5265581 43,32.9205615 C43,32.6364994 42.9044626,32.3713754 42.6940073,32.163065 L38.1916924,27.693834 C39.1380561,26.4629143 39.7020373,24.9384402 39.7020373,23.2814225 C39.7020373,19.2761631 36.3945605,16 32.3510186,16 C28.3074768,16 25,19.2761631 25,23.2814225 C25,27.2866819 28.3074768,30.5628547 32.3510186,30.5628547 Z M32.3510186,28.9910546 C29.1964792,28.9910546 26.5868136,26.4060961 26.5868136,23.2814225 C26.5868136,20.1567489 29.1964792,17.5718097 32.3510186,17.5718097 C35.505558,17.5718097 38.1152237,20.1567489 38.1152237,23.2814225 C38.1152237,26.4060961 35.505558,28.9910546 32.3510186,28.9910546 Z" id="Shape" fill="#000000"></path>
+            </g>
+        </g>
+    </g>
+</svg>
