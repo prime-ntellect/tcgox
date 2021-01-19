@@ -5,12 +5,12 @@ const HomePage = () => {
 	return (
 		<>
 			<Head>
-				<meta name="description" content="Trading Card Game Exchange" />
-				<meta property="og:site_name" content="TCG0X - Trade cards for Bitcoin." />
-				<meta property="og:title" content="TCG0X Search - Trade cards for Bitcoin." />
+				<meta property="og:site_name" content="TCGOX - Trade cards for Bitcoin" />
+				<meta property="og:title" content="TCGOX Search - Trade cards for Bitcoin" />
 				<meta property="og:type" content="website" />
 				<meta property="og:description" content="Trading Card Game Exchange" />
-				<meta property="og:image" content="https://tcgox.app/assets/images/twinning-blade.png" />
+				<meta name="description" content="Trading Card Game Exchange" />
+				<meta property="og:image" content="https://tcgox.app/tcgox-icon.png" />
 				<meta property="og:image:type" content="image/jpeg" />
 				<meta property="og:image:width" content="1280" />
 				<meta property="og:image:height" content="800" />
