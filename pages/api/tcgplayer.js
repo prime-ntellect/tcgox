@@ -32,6 +32,7 @@ const endpoint = async (req, res) => {
 				description: `${e.productLineName} ${e.setName} ${e.rarityName}`,
 				icon: `https://tcgplayer-cdn.tcgplayer.com/product/${e.productId}_200w.jpg`,
 				store: 'tcgplayer',
+				type: 'Fixed Price',
 			});
 		});
 

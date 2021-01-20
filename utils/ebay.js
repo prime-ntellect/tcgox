@@ -1,5 +1,6 @@
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
+import moment from 'moment';
 
 const parse = async (searchTerm) => {
 	const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
@@ -21,9 +22,10 @@ const parse = async (searchTerm) => {
 			const e = $(this);
 
 			const title = e.find('.lvtitle').text().trim();
-			const soldBy = e.find('.lvformat').text().trim();
-			const subtitle = e.find('.lvsubtitle').text().trim();
 			const shipping = e.find('.lvshipping').text().trim();
+			const soldOn = moment(new Date(e.find('.tme').text().trim()))
+				.year(moment().year())
+				.format('ddd DD MMM hh:mm a');
 
 			if (!title) {
 				return;
@@ -33,9 +35,10 @@ const parse = async (searchTerm) => {
 				store: 'eBay',
 				title,
 				icon: e.find('.lvpic img').attr('src'),
-				description: `${subtitle} - ${soldBy} - ${shipping}`,
+				description: `Sold on ${soldOn} - ${shipping}`,
 				url: e.find('.lvtitle a').attr('href'),
 				price: e.find('.lvprice').text().trim(),
+				type: e.find('.lvformat').text().trim(),
 			});
 		});
 

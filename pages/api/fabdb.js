@@ -8,8 +8,6 @@ const endpoint = async (req, res) => {
 
 		await Promise.all(
 			data.data.map(async (each) => {
-				const type = each.identifier.slice(0, 3).toLowerCase();
-				const num = parseInt(each.identifier.slice(3));
 				const { data: cardData } = await axios.get(
 					`https://fabdb.net/api/cards/${each.identifier}`
 				);
@@ -23,6 +21,7 @@ const endpoint = async (req, res) => {
 						price: `$${e.price} ${e.currency}`,
 						store: 'fabdb',
 						storeUrl: `${e.domain}${e.path}`,
+						type: 'Fixed Price',
 					});
 				});
 			})

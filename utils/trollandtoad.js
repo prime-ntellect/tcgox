@@ -34,6 +34,7 @@ const parse = async (search) => {
 						description,
 						url: `https://trollandtoad.com${e.find('div:nth-child(2) a').attr('href')}`,
 						price,
+						type: 'Fixed Price',
 					});
 				});
 		});

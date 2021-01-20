@@ -4,7 +4,7 @@ const styles = () =>
 	makeStyles({
 		root: {
 			background: 'white',
-			borderRadius: '16px',
+			borderRadius: '18px',
 			padding: '24px',
 			display: 'flex',
 			marginBottom: '12px',
@@ -26,6 +26,9 @@ const styles = () =>
 			fontWeight: 'bold',
 			marginTop: '4px',
 			width: '100%',
+		},
+		type: {
+			color: '#007AFF',
 		},
 		description: {
 			fontSize: '17px',

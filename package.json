@@ -24,6 +24,7 @@
     "dotenv": "^8.2.0",
     "ebay-node-api": "^2.8.9",
     "electron-squirrel-startup": "^1.0.0",
+    "moment": "2.29.1",
     "next": "10.0.4",
     "next-pwa": "5.0.4",
     "puppeteer": "^5.5.0",

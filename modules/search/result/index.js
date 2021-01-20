@@ -22,7 +22,9 @@ const Result = (props) => {
 				<div className={classes.body}>
 					<div className={classes.store}>{result.store}</div>
 					<div className={classes.title}>{result.title}</div>
-					<div className={classes.description}>{result.description}</div>
+					<div className={classes.description}>
+						<span className={classes.type}>{result.type}</span> - {result.description}
+					</div>
 					<div className={classes.price}>{result.price}</div>
 					<div
 						className={classes.price}
@@ -39,7 +41,7 @@ const Result = (props) => {
 				</div>
 			</div>
 		);
-	}, [result]);
+	}, [result, classes]);
 
 	if (isElectron) {
 		return (

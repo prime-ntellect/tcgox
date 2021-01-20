@@ -8,8 +8,8 @@ const styles = () =>
 		},
 		root: {
 			background: '#F3F2F8',
-			borderRadius: '32px',
-			padding: '16px',
+			borderRadius: '24px',
+			padding: '24px',
 			position: 'relative',
 		},
 	});
