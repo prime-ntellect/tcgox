@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 function useWindowSize() {
 	const [windowSize, setWindowSize] = useState({
-		width: undefined,
-		height: undefined,
+		width: typeof window !== 'undefined' ? localStorage.getItem('windowWidth') : undefined,
+		height: typeof window !== 'undefined' ? localStorage.getItem('windowHeight') : undefined,
 	});
 
 	useEffect(() => {
@@ -12,6 +12,8 @@ function useWindowSize() {
 				width: window.innerWidth,
 				height: window.innerHeight,
 			});
+			localStorage.setItem('windowWidth', window.innerWidth);
+			localStorage.setItem('windowHeight', window.innerHeight);
 		}
 
 		window.addEventListener('resize', handleResize);

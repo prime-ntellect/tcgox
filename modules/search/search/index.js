@@ -28,11 +28,11 @@ const Search = () => {
 			<div className={classes.mobileRoot}>
 				<div className={classes.mobileTitle}>TCGOX</div>
 				<div className={classes.mobileInputWrapper}>
-					<img src="/search-icon.svg" className={classes.mobileIcon} />
+					<img src="/mobile-search-icon.svg" className={classes.mobileIcon} />
 					<input
 						autoFocus
 						className={classes.mobileInput}
-						placeholder="search"
+						placeholder="Search"
 						value={search}
 						onChange={handleChangeSearch}
 					/>
@@ -49,7 +49,7 @@ const Search = () => {
 				<input
 					autoFocus
 					className={classes.input}
-					placeholder="search"
+					placeholder="Search"
 					value={search}
 					onChange={handleChangeSearch}
 				/>

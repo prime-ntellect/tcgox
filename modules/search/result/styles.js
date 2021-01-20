@@ -11,7 +11,7 @@ const styles = () =>
 			width: '100%',
 		},
 		body: {
-			width: 'calc(100% - 57px)',
+			width: 'calc(100% - 102px)',
 		},
 		store: {
 			fontSize: '20px',
@@ -52,7 +52,7 @@ const styles = () =>
 			flexGrow: '1',
 		},
 		imageWrapper: {
-			width: '86px',
+			width: '90px',
 			marginLeft: '12px',
 		},
 		mobileRoot: {
@@ -67,7 +67,7 @@ const styles = () =>
 			marginRight: '12px',
 		},
 		mobileBody: {
-			flexGrow: '1',
+			width: 'calc(100% - 102px)',
 		},
 		mobileStore: {
 			fontSize: '12px',
@@ -89,9 +89,12 @@ const styles = () =>
 			maxWidth: '90px',
 		},
 		mobileDescription: {
-			fontSize: '16px',
-			lineHeight: '20px',
-			color: '#3C3C43',
+			fontSize: '14px',
+			lineHeight: '18px',
+			color: '#8B8B8F',
+			whiteSpace: 'nowrap',
+			textOverflow: 'ellipsis',
+			overflow: 'hidden',
 			marginTop: '4px',
 		},
 		mobilePrice: {

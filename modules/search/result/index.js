@@ -65,7 +65,7 @@ const Result = (props) => {
 				</div>
 				<div className={classes.grow} />
 				<div className={classes.imageWrapper}>
-					<Image src={result.icon} height={122} width={86} />
+					<Image src={result.icon} height={128} width={90} />
 				</div>
 			</div>
 		);
