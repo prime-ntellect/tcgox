@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import queryParser from 'app-utils/query-parser';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import useWindowSize from 'app-utils/hooks/useWindowSize';
 import useStyles from './styles';
 import worker from 'app-utils/worker';
 
@@ -17,6 +18,7 @@ const Results = (props) => {
 	const renderResult = React.useCallback((result, index) => {
 		return <Result key={index} result={result} />;
 	}, []);
+	const windowSize = useWindowSize();
 
 	React.useEffect(() => {
 		async function fetch() {
@@ -37,17 +39,32 @@ const Results = (props) => {
 		fetch();
 	}, [search, id]);
 
+	if (windowSize.width <= 768) {
+		return (
+			<div className={classes.mobileRoot}>
+				{loading && (
+					<div className={classes.loading}>
+						<CircularProgress />
+					</div>
+				)}
+				{!loading && !!results.length && (
+					<div className={classes.mobileBody}>{results.map(renderResult)}</div>
+				)}
+			</div>
+		);
+	}
+
 	return (
-		<>
+		<div className={classes.root}>
 			{loading && (
 				<div className={classes.loading}>
 					<CircularProgress />
 				</div>
 			)}
 			{!loading && !!results.length && (
-				<div className={classes.root}>{results.map(renderResult)}</div>
+				<div className={classes.body}>{results.map(renderResult)}</div>
 			)}
-		</>
+		</div>
 	);
 };
 

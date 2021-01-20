@@ -83,7 +83,7 @@ const AppWorker = {
 					...e,
 					parsedPrice: price,
 					price: `$${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
-					bsvPrice: (price / bsvPrice).toFixed(8),
+					bsvPrice: (price / bsvPrice).toFixed(3),
 				};
 			})
 			.sort((a, b) => b.parsedPrice - a.parsedPrice);

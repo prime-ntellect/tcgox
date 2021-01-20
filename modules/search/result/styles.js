@@ -55,6 +55,57 @@ const styles = () =>
 			width: '86px',
 			marginLeft: '12px',
 		},
+		mobileRoot: {
+			background: 'white',
+			padding: '16px',
+			display: 'flex',
+			width: '100%',
+			borderBottom: '1px solid #DBDBDB',
+		},
+		mobileImageWrapper: {
+			width: '90px',
+			marginRight: '12px',
+		},
+		mobileBody: {
+			flexGrow: '1',
+		},
+		mobileStore: {
+			fontSize: '12px',
+			lineHeight: '16px',
+			color: '#8A8A8E',
+			fontWeight: '400',
+		},
+		mobileTitle: {
+			fontSize: '16px',
+			lineHeight: '20px',
+			color: 'black',
+			fontWeight: 'bold',
+			marginTop: '4px',
+			width: '100%',
+		},
+		icon: {
+			width: '90px',
+			minWidth: '90px',
+			maxWidth: '90px',
+		},
+		mobileDescription: {
+			fontSize: '16px',
+			lineHeight: '20px',
+			color: '#3C3C43',
+			marginTop: '4px',
+		},
+		mobilePrice: {
+			marginTop: '12px',
+			background: '#34C759',
+			display: 'inline-block',
+			height: '25px',
+			lineHeight: '25px',
+			padding: '0 16px',
+			borderRadius: '12px',
+			color: 'white',
+			fontSize: '14px',
+			fontWeight: 'bold',
+		},
 	});
 
 export default styles;

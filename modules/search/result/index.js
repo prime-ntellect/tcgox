@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
+import useWindowSize from 'app-utils/hooks/useWindowSize';
 import useStyles from './styles';
 
 const Result = (props) => {
 	const classes = useStyles()();
 	const { result } = props;
+	const windowSize = useWindowSize();
 
 	const isElectron = React.useMemo(() => {
 		var userAgent = navigator.userAgent.toLowerCase();
@@ -17,6 +19,32 @@ const Result = (props) => {
 	}, [result]);
 
 	const renderBody = React.useCallback(() => {
+		if (windowSize.width <= 768) {
+			return (
+				<div className={classes.mobileRoot}>
+					<div className={classes.mobileImageWrapper}>
+						<Image src={result.icon} height={128} width={90} />
+					</div>
+					<div className={classes.mobileBody}>
+						<div className={classes.mobileStore}>{result.store}</div>
+						<div className={classes.mobileTitle}>{result.title}</div>
+						<div className={classes.mobileDescription}>
+							<span className={classes.type}>{result.type}</span> - {result.description}
+						</div>
+						<div className={classes.mobilePrice}>{result.price}</div>
+						<div
+							className={classes.mobilePrice}
+							style={{
+								marginLeft: '12px',
+							}}
+						>
+							{result.bsvPrice} BSV
+						</div>
+					</div>
+				</div>
+			);
+		}
+
 		return (
 			<div className={classes.root}>
 				<div className={classes.body}>
@@ -41,7 +69,7 @@ const Result = (props) => {
 				</div>
 			</div>
 		);
-	}, [result, classes]);
+	}, [result, classes, windowSize]);
 
 	if (isElectron) {
 		return (

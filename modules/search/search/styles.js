@@ -7,6 +7,7 @@ const styles = () =>
 			top: '0',
 			zIndex: '2',
 			background: 'white',
+			padding: '0 16px',
 		},
 		background: {
 			height: '24px',
@@ -39,6 +40,44 @@ const styles = () =>
 		bumper: {
 			height: '24px',
 			background: 'white',
+		},
+		mobileRoot: {
+			position: 'sticky',
+			top: '0',
+			zIndex: '2',
+			padding: '16px',
+			background: '#F9F9F9',
+			borderBottom: '1px solid #DBDBDB',
+		},
+		mobileTitle: {
+			fontSize: '34px',
+			lineHeight: '40px',
+			fontWeight: 'bold',
+			marginBottom: '16px',
+		},
+		mobileIcon: {
+			marginRight: '12px',
+			height: '16px',
+			width: '16px',
+			marginTop: '3px',
+		},
+		mobileInputWrapper: {
+			padding: '7px 10px',
+			width: '100%',
+			maxWidth: '100%',
+			borderRadius: '10px',
+			margin: '0 auto',
+			background: '#E8E8E9',
+			display: 'flex',
+		},
+		mobileInput: {
+			fontSize: '14px',
+			fontWeight: 500,
+			lineHeight: '22px',
+			padding: 0,
+			background: 'transparent',
+			border: 'none',
+			flexGrow: '1',
 		},
 	});
 
