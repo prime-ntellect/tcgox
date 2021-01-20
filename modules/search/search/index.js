@@ -28,7 +28,7 @@ const Search = () => {
 			<div className={classes.mobileRoot}>
 				<div className={classes.mobileTitle}>TCGOX</div>
 				<div className={classes.mobileInputWrapper}>
-					<img src="/mobile-search-icon.svg" className={classes.mobileIcon} />
+					<img src="/msi.svg" className={classes.mobileIcon} />
 					<input
 						autoFocus
 						className={classes.mobileInput}
