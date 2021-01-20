@@ -71,7 +71,7 @@ const styles = () =>
 			display: 'flex',
 		},
 		mobileInput: {
-			fontSize: '14px',
+			fontSize: '16px',
 			fontWeight: 500,
 			lineHeight: '22px',
 			padding: 0,
