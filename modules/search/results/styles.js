@@ -8,6 +8,7 @@ const styles = () =>
 		mobileRoot: {},
 		mobileBody: {},
 		loading: {
+			marginTop: '16px',
 			display: 'flex',
 			justifyContent: 'center',
 		},
