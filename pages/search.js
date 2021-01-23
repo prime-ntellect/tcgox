@@ -17,9 +17,11 @@ const HomePage = () => {
 				<meta property="og:url" content="https://tcgox.app" />
 				<meta property="twitter:card" content="summary_large_image" />
 				<link rel="icon" href="https://tcgox.app/favicon.ico" />
-				<link rel="apple-touch-icon" sizes="128x128" href="https://tcgox.app/tcgox-icon-128.png" />
-				<link rel="apple-touch-icon" sizes="384x384" href="https://tcgox.app/tcgox-icon-384.png" />
-				<link rel="apple-touch-icon" sizes="512x512" href="https://tcgox.app/tcgox-icon-512.png" />
+				<link
+					rel="apple-touch-icon"
+					sizes="512x512"
+					href="https://tcgox.app/tcgox-icon-apple.png"
+				/>
 				<link rel="manifest" href="/manifest.json" />
 			</Head>
 			<Module />
