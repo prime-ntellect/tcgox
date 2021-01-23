@@ -49,7 +49,6 @@ const Search = () => {
 		<div className={classes.root}>
 			<div className={classes.background} />
 			<div className={classes.inputWrapper}>
-				<img src="/search-icon.svg" className={classes.icon} />
 				<input
 					autoFocus
 					className={classes.input}
