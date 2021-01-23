@@ -17,6 +17,7 @@ const HomePage = () => {
 				<meta property="og:url" content="https://tcgox.app" />
 				<meta property="twitter:card" content="summary_large_image" />
 				<link rel="icon" href="https://tcgox.app/favicon.ico" />
+				<meta name="apple-mobile-web-app-status-bar-style" content="white" />
 				<link
 					rel="apple-touch-icon"
 					sizes="512x512"
