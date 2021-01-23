@@ -49,11 +49,21 @@ const styles = () =>
 			background: '#F9F9F9',
 			borderBottom: '1px solid #DBDBDB',
 		},
+		mobileRootHeader: {
+			display: 'flex',
+			marginBottom: '16px',
+			alignItems: 'baseline',
+		},
 		mobileTitle: {
+			margin: '0',
 			fontSize: '34px',
 			lineHeight: '40px',
 			fontWeight: 'bold',
-			marginBottom: '16px',
+		},
+		mobileVersion: {
+			margin: '0',
+			fontSize: '12px',
+			lineHeight: '14px',
 		},
 		mobileIcon: {
 			marginRight: '12px',

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDebounce } from 'use-debounce';
 import { useRouter } from 'next/router';
 import queryParser from 'app-utils/query-parser';
+import pkg from '../../../package.json';
 
 import useWindowSize from 'app-utils/hooks/useWindowSize';
 import useStyles from './styles';
@@ -26,7 +27,10 @@ const Search = () => {
 	if (windowSize.width <= 768) {
 		return (
 			<div className={classes.mobileRoot}>
-				<div className={classes.mobileTitle}>TCGOX</div>
+				<div className={classes.mobileRootHeader}>
+					<p className={classes.mobileTitle}>TCGOX</p>
+					<p className={classes.mobileVersion}>v{pkg.version}</p>
+				</div>
 				<div className={classes.mobileInputWrapper}>
 					<img src="/msi.svg" className={classes.mobileIcon} />
 					<input
