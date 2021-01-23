@@ -32,6 +32,7 @@ const Search = () => {
 					<p className={classes.mobileVersion}>v{pkg.version}</p>
 				</div>
 				<div className={classes.mobileInputWrapper}>
+					<img src="/msi.svg" className={classes.mobileIcon} />
 					<input
 						autoFocus
 						className={classes.mobileInput}
