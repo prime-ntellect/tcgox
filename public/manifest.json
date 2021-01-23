@@ -3,7 +3,7 @@
   "short_name": "TCGOX",
   "icons": [
     {
-      "src": "https://tcgox.app/tcgox-icon.png",
+      "src": "https://tcgox.app/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }

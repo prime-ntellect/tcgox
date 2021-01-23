@@ -20,7 +20,7 @@ const HomePage = () => {
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 				<meta name="theme-color" content="#FFFFFF" />
-				<link rel="apple-touch-icon" sizes="512x512" href="https://tcgox.app/tcgox-icon.png" />
+				<link rel="apple-touch-icon" sizes="512x512" href="https://tcgox.app/icon.png" />
 				<link rel="manifest" href="/manifest.json" />
 			</Head>
 			<Module />
