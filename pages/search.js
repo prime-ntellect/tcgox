@@ -17,6 +17,7 @@ const HomePage = () => {
 				<meta property="og:url" content="https://tcgox.app" />
 				<meta property="twitter:card" content="summary_large_image" />
 				<link rel="icon" href="https://tcgox.app/favicon.ico" />
+				<link rel="manifest" href="/manifest.json" />
 			</Head>
 			<Module />
 		</>
