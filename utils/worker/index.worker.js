@@ -1,7 +1,7 @@
 import * as Comlink from 'comlink';
 import axios from 'axios';
 
-const dataSources = ['tcgplayer', 'trollandtoad', 'ebay', 'fabdb'];
+const dataSources = ['ebay', 'tcgplayer', 'trollandtoad', 'fabdb'];
 let bsvPrice = 218;
 let forexPrices = {
 	CAD: 1.2686407126,
@@ -52,6 +52,22 @@ setInterval(async () => {
 	init();
 }, 6000000);
 
+const processDataSource = (e) => {
+	let price = e.price;
+	const currency = Object.keys(forexPrices).find((c) => price.includes(c)) || 'USD';
+
+	price = (parseFloat(e.price.replace(',', '').match(/[\d\.]+/)) / forexPrices[currency]).toFixed(
+		2
+	);
+
+	return {
+		...e,
+		parsedPrice: price,
+		price: `$${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
+		bsvPrice: (price / bsvPrice).toFixed(3),
+	};
+};
+
 const AppWorker = {
 	pi: () => Math.PI,
 	fetch: (...args) => {
@@ -69,26 +85,16 @@ const AppWorker = {
 				}
 			})
 		);
+
+		const ebayResults = responses[0].map((e) => processDataSource(e));
+
 		const results = responses
+			.slice(1)
 			.reduce((a, e) => a.concat(e), [])
-			.map((e) => {
-				let price = e.price;
-				const currency = Object.keys(forexPrices).find((c) => price.includes(c)) || 'USD';
-
-				price = (
-					parseFloat(e.price.replace(',', '').match(/[\d\.]+/)) / forexPrices[currency]
-				).toFixed(2);
-
-				return {
-					...e,
-					parsedPrice: price,
-					price: `$${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
-					bsvPrice: (price / bsvPrice).toFixed(3),
-				};
-			})
+			.map((e) => processDataSource(e))
 			.sort((a, b) => b.parsedPrice - a.parsedPrice);
 
-		return results;
+		return ebayResults.concat(results);
 	},
 	sort: (items) => {
 		return items.sort(

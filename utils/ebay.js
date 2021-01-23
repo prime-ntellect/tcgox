@@ -25,7 +25,7 @@ const parse = async (searchTerm) => {
 			const shipping = e.find('.lvshipping').text().trim();
 			const soldOn = moment(new Date(e.find('.tme').text().trim()))
 				.year(moment().year())
-				.format('ddd DD MMM hh:mm a');
+				.format('MM/DD');
 
 			if (!title) {
 				return;
@@ -35,7 +35,7 @@ const parse = async (searchTerm) => {
 				store: 'eBay',
 				title,
 				icon: e.find('.lvpic img').attr('src'),
-				description: `Sold on ${soldOn} - ${shipping}`,
+				description: `Sold on ${soldOn} ${shipping}`,
 				url: e.find('.lvtitle a').attr('href'),
 				price: e.find('.lvprice').text().trim(),
 				type: e.find('.lvformat').text().trim(),
