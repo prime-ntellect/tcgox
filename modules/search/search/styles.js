@@ -9,9 +9,29 @@ const styles = () =>
 			background: 'white',
 			padding: '0 16px',
 		},
+		body: {
+			display: 'flex',
+		},
 		background: {
 			height: '24px',
 			background: 'white',
+		},
+		filter: {
+			height: '48px',
+			width: '48px',
+			background: '#F2F2F7',
+			borderRadius: '100%',
+			marginRight: '16px',
+			cursor: 'pointer',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+		filterIcon: {
+			height: '22px',
+			width: '22px',
+			margin: '0 auto',
 		},
 		icon: {
 			marginRight: '24px',
@@ -36,6 +56,12 @@ const styles = () =>
 			background: 'transparent',
 			border: 'none',
 			flexGrow: '1',
+		},
+		clearIcon: {
+			height: '28px',
+			width: '28px',
+			cursor: 'pointer',
+			color: '#757575',
 		},
 		bumper: {
 			height: '24px',
@@ -87,6 +113,31 @@ const styles = () =>
 			padding: 0,
 			background: 'transparent',
 			border: 'none',
+			flexGrow: '1',
+		},
+		mobileClearIcon: {
+			height: '22px',
+			width: '22px',
+			cursor: 'pointer',
+			color: '#757575',
+		},
+		mobileFilter: {
+			height: '30px',
+			width: '30px',
+			background: '#E4E4E5',
+			borderRadius: '100%',
+			cursor: 'pointer',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+		mobileFilterIcon: {
+			height: '16px',
+			width: '16px',
+			margin: '0 auto',
+		},
+		grow: {
 			flexGrow: '1',
 		},
 	});

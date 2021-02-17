@@ -9,11 +9,12 @@ import useStyles from './styles';
 import worker from 'app-utils/worker';
 
 const Results = (props) => {
-	const classes = useStyles()();
+	const classes = useStyles();
 	const router = useRouter();
 	const [loading, setLoading] = React.useState(false);
 	const [results, setResults] = React.useState([]);
 	const search = React.useMemo(() => queryParser(router.asPath.slice(7) || '')?.search, [router]);
+	const filters = React.useMemo(() => queryParser(router.asPath.slice(7) || '')?.filters, [router]);
 	const { id } = props;
 	const renderResult = React.useCallback((result, index) => {
 		return <Result key={index} result={result} />;
@@ -26,7 +27,9 @@ const Results = (props) => {
 			setResults([]);
 			try {
 				if (search) {
-					const data = await worker.search(search);
+					const omit =
+						JSON.parse(queryParser(window.location.search)?.filters || '{}')?.omitSources || [];
+					const data = await worker.search(search, omit);
 					setResults(data);
 				}
 			} catch (e) {
@@ -37,7 +40,7 @@ const Results = (props) => {
 		}
 
 		fetch();
-	}, [search, id]);
+	}, [search, id, filters]);
 
 	if (windowSize.width <= 768) {
 		return (
@@ -56,14 +59,14 @@ const Results = (props) => {
 
 	return (
 		<div className={classes.root}>
-			{loading && (
-				<div className={classes.loading}>
-					<CircularProgress />
-				</div>
-			)}
-			{!loading && !!results.length && (
-				<div className={classes.body}>{results.map(renderResult)}</div>
-			)}
+			<div className={classes.body}>
+				{loading && (
+					<div className={classes.loading}>
+						<CircularProgress />
+					</div>
+				)}
+				{!loading && !!results.length && results.map(renderResult)}
+			</div>
 		</div>
 	);
 };

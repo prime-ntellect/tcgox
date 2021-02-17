@@ -74,16 +74,18 @@ const AppWorker = {
 		console.log({ args });
 		return fetch(...args);
 	},
-	search: async (searchTerm) => {
+	search: async (searchTerm, omit) => {
 		const responses = await Promise.all(
-			dataSources.map(async (e) => {
-				try {
-					const { data } = await axios.get(`/api/${e}?search=${searchTerm}`);
-					return data;
-				} catch (e) {
-					return [];
-				}
-			})
+			dataSources
+				.filter((e) => !omit.find((o) => o === e))
+				.map(async (e) => {
+					try {
+						const { data } = await axios.get(`/api/${e}?search=${searchTerm}`);
+						return data;
+					} catch (e) {
+						return [];
+					}
+				})
 		);
 
 		const ebayResults = responses[0].map((e) => processDataSource(e));

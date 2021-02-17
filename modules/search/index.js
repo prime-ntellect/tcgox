@@ -1,14 +1,18 @@
 import Search from './search';
 import Results from './results';
-
+import Filters from './filters';
 import useStyles from './styles';
 
 const Home = () => {
-	const classes = useStyles()();
+	const classes = useStyles();
+
 	return (
 		<div className={classes.root}>
-			<Search />
-			<Results />
+			<Filters />
+			<div className={classes.body}>
+				<Search />
+				<Results />
+			</div>
 		</div>
 	);
 };
