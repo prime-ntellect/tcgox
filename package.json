@@ -1,6 +1,6 @@
 {
   "name": "TCGOX",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "main": "main.js",
   "repository": "https://github.com/metamorphosis-of-prime-intellect/tcgox.app.git",
@@ -25,6 +25,7 @@
     "dotenv": "^8.2.0",
     "ebay-node-api": "^2.8.9",
     "electron-squirrel-startup": "^1.0.0",
+    "file-system-cache": "^1.0.5",
     "moment": "2.29.1",
     "next": "10.0.4",
     "next-pwa": "5.0.4",

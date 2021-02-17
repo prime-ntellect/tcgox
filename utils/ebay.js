@@ -1,6 +1,7 @@
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 import moment from 'moment';
+import axios from 'axios';
 
 const parse = async (searchTerm) => {
 	const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
@@ -14,7 +15,7 @@ const parse = async (searchTerm) => {
 	const content = await page.content();
 
 	const $ = cheerio.load(content);
-	const response = [];
+	let response = [];
 
 	$('#ListViewInner')
 		.children()
@@ -32,6 +33,7 @@ const parse = async (searchTerm) => {
 			}
 
 			response.push({
+				ebayID: e.attr('listingid'),
 				store: 'eBay',
 				title,
 				icon: e.find('.lvpic img').attr('src'),
@@ -43,6 +45,19 @@ const parse = async (searchTerm) => {
 		});
 
 	await browser.close();
+
+	response = await Promise.all(
+		response.map(async (e) => {
+			if (e.type.includes('Best offer accepted')) {
+				const { data } = await axios.get(`https://tcgox.app/api/ebay-best-offer?id=${e.ebayID}`);
+
+				return { ...e, price: data };
+			}
+
+			return e;
+		})
+	);
+
 	return response;
 };
 

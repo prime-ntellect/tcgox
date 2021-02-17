@@ -3,6 +3,7 @@
 out
 public/workbox-*
 public/sw*
+.cache
 
 schema.json
 .bit
