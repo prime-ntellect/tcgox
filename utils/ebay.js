@@ -14,6 +14,8 @@ const parse = async (searchTerm) => {
 	);
 	const content = await page.content();
 
+	console.log({ content });
+
 	const $ = cheerio.load(content);
 	let response = [];
 
@@ -45,6 +47,8 @@ const parse = async (searchTerm) => {
 		});
 
 	await browser.close();
+
+	console.log({ response });
 
 	response = await Promise.all(
 		response.map(async (e) => {
