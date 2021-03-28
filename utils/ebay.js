@@ -3,8 +3,12 @@ import puppeteer from 'puppeteer';
 import moment from 'moment';
 import axios from 'axios';
 
+const proxyUrl = 'http://168.119.240.68:7331';
+
 const parse = async (searchTerm) => {
-	const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+	const browser = await puppeteer.launch({
+		args: ['--no-sandbox', '--disable-setuid-sandbox', `--proxy-server=${proxyUrl}`],
+	});
 	const pages = await browser.pages();
 	const [page] = pages;
 
@@ -13,8 +17,6 @@ const parse = async (searchTerm) => {
 		{ waitUntil: 'networkidle2' }
 	);
 	const content = await page.content();
-
-	console.log({ content });
 
 	const $ = cheerio.load(content);
 	let response = [];
@@ -47,8 +49,6 @@ const parse = async (searchTerm) => {
 		});
 
 	await browser.close();
-
-	console.log({ response });
 
 	response = await Promise.all(
 		response.map(async (e) => {

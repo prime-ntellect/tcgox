@@ -6,12 +6,13 @@
   "repository": "https://github.com/metamorphosis-of-prime-intellect/tcgox.app.git",
   "scripts": {
     "dev": "next dev -p 21380",
-    "dev:electron": "electron .",
+    "start": "next start -p 21380",
     "build": "next build",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "dev:electron": "electron .",
+    "start:electron": "electron-forge start",
+    "package:electron": "electron-forge package",
+    "make:electron": "electron-forge make",
+    "publish:electron": "electron-forge publish"
   },
   "dependencies": {
     "@electron-forge/publisher-github": "^6.0.0-beta.54",
